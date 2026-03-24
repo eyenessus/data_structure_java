@@ -16,9 +16,18 @@ public class Node {
     }
 
     public static void main(String[] args) {
-        Node firstNode = new Node("Hello, I'm a node.");
-        Node secondNode = new Node("I'm second node.");
-        firstNode.setNextNode(secondNode);
-        System.out.println(firstNode.next.data);
+        Node strawberry = new Node("Berry Testy");
+        Node banana = new Node("Banana-rama");
+        Node coconut = new Node("Nuts for coconut");
+
+        strawberry.setNextNode(banana);
+        banana.setNextNode(coconut);
+
+        Node currentNode = strawberry;
+        
+        while(currentNode != null){
+            System.out.println(currentNode.data);
+            currentNode = currentNode.getNextNode();
+        }
     }
 }   
