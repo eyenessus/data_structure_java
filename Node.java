@@ -1,6 +1,6 @@
 public class Node {
     public String data;
-    public Node next;
+    private Node next;
 
     public Node(String data){
         this.data = data;
@@ -24,7 +24,7 @@ public class Node {
         banana.setNextNode(coconut);
 
         Node currentNode = strawberry;
-        
+
         while(currentNode != null){
             System.out.println(currentNode.data);
             currentNode = currentNode.getNextNode();
