@@ -8,6 +8,9 @@ public class Node {
     }
 
     public static void main(String[] args) {
-        
+        Node Node = new Node("Hello, I'm a node.");
+        System.out.println(Node.data);
+        System.out.println(Node.next);
+        System.out.println();
     }
 }
