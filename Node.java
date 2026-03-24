@@ -10,6 +10,10 @@ public class Node {
     public void setNextNode(Node node){
         this.next = node;
     }
+    
+    public Node getNextNode(){
+        return this.next;
+    }
 
     public static void main(String[] args) {
         Node firstNode = new Node("Hello, I'm a node.");
