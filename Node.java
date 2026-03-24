@@ -7,10 +7,14 @@ public class Node {
         this.next = null;
     }
 
-    public static void main(String[] args) {
-        Node Node = new Node("Hello, I'm a node.");
-        System.out.println(Node.data);
-        System.out.println(Node.next);
-        System.out.println();
+    public void setNextNode(Node node){
+        this.next = node;
     }
-}
+
+    public static void main(String[] args) {
+        Node firstNode = new Node("Hello, I'm a node.");
+        Node secondNode = new Node("I'm second node.");
+        firstNode.setNextNode(secondNode);
+        System.out.println(firstNode.next.data);
+    }
+}   
