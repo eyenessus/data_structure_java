@@ -26,6 +26,25 @@ public class LinkedList {
         currentNode.setNextNode(tailNode);
     }
 
+    public String removeHead(){
+        Node removedHead = this.head;
+        if(removedHead ==null){
+            return null;
+        }
+        this.head = removedHead.getNextNode();
+        return removedHead.data;
+    }
+
+    public String printList(){
+        Node head = this.head;
+        String output = "<head> ";
+        while (head != null) {
+            output += head.data + " ";
+        }
+        output += "<tail>";
+        return output;
+    }
+
     public static void main(String[] args) {
 
     }
