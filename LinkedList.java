@@ -26,16 +26,16 @@ public class LinkedList {
         currentNode.setNextNode(tailNode);
     }
 
-    public String removeHead(){
+    public String removeHead() {
         Node removedHead = this.head;
-        if(removedHead ==null){
+        if (removedHead == null) {
             return null;
         }
         this.head = removedHead.getNextNode();
         return removedHead.data;
     }
 
-    public String printList(){
+    public String printList() {
         Node head = this.head;
         String output = "<head> ";
         while (head != null) {
@@ -46,6 +46,17 @@ public class LinkedList {
     }
 
     public static void main(String[] args) {
+        LinkedList seasons = new LinkedList();
+        seasons.printList();
+        seasons.addToHead("summer");
+        seasons.addToHead("spring");
+        seasons.printList();
 
+        seasons.addToTail("fall");
+        seasons.addToTail("winter");
+        seasons.printList();
+        
+        seasons.removeHead();
+        seasons.printList();
     }
 }
