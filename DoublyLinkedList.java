@@ -49,7 +49,7 @@ public class DoublyLinkedList {
         this.head.setPreviousNode(null);
        }
 
-       if(this.head == this.tail){
+       if(removedHead == this.tail){
         this.removeTail();
        }
        return removedHead.data;
@@ -58,14 +58,21 @@ public class DoublyLinkedList {
 
     public String removeTail() {
         Node removeTail = this.tail;
-        if (removeTail != null) {
-            removeTail = removeTail.getPreviousNode();
-            removeTail.setNextNode(null);
-        } else {
+        if (removeTail == null) {
             return null;
         }
+        this.tail = removeTail.getPreviousNode();
+        if(this.tail != null){
+            this.tail.setNextNode(null);
+        }
+
+        if(removeTail == this.head){
+            this.removeHead();
+        }
+
         return removeTail.data;
     }
+    
 
     public static void main(String[] args) {
 
