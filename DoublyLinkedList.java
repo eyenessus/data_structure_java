@@ -50,7 +50,7 @@ public class DoublyLinkedList {
        }
 
        if(removedHead == this.tail){
-        this.removeTail();
+            this.tail = null;
        }
        return removedHead.data;
 
@@ -67,7 +67,7 @@ public class DoublyLinkedList {
         }
 
         if(removeTail == this.head){
-            this.removeHead();
+            this.head = null;
         }
 
         return removeTail.data;
