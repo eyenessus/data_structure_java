@@ -39,20 +39,20 @@ public class DoublyLinkedList {
     }
 
     public String removeHead() {
-       Node removedHead = this.head;
-       if(removedHead == null){
-        return null;
-       }
-       
-       this.head = removedHead.getNextNode();
-       if(this.head != null){
-        this.head.setPreviousNode(null);
-       }
+        Node removedHead = this.head;
+        if (removedHead == null) {
+            return null;
+        }
 
-       if(removedHead == this.tail){
+        this.head = removedHead.getNextNode();
+        if (this.head != null) {
+            this.head.setPreviousNode(null);
+        }
+
+        if (removedHead == this.tail) {
             this.tail = null;
-       }
-       return removedHead.data;
+        }
+        return removedHead.data;
 
     }
 
@@ -62,17 +62,58 @@ public class DoublyLinkedList {
             return null;
         }
         this.tail = removeTail.getPreviousNode();
-        if(this.tail != null){
+        if (this.tail != null) {
             this.tail.setNextNode(null);
         }
 
-        if(removeTail == this.head){
+        if (removeTail == this.head) {
             this.head = null;
         }
 
         return removeTail.data;
     }
-    
+
+    public Node removeByData(String data) {
+        Node removeData = null;
+        Node currentHead = this.head;
+
+        while (currentHead != null) {
+            if (currentHead.data == data) {
+                break;
+            }
+            removeData = removeData.getNextNode();
+        }
+
+        if (removeData == null) {
+            return null;
+        }
+
+        Node previousNode = removeData.getPreviousNode();
+        Node nextNode = removeData.getNextNode();
+        
+        if (nextNode == null){
+            this.removeTail();
+        } else if (previousNode == null) {
+            this.removeHead();
+        } else {
+            previousNode.setNextNode(nextNode);
+            nextNode.setPreviousNode(previousNode);
+        }
+
+        return removeData;
+    }
+
+    public String printList() {
+        Node currentNode = this.head;
+        String output = "<head> ";
+        while (currentNode != null) {
+            output += currentNode.data + " ";
+            currentNode = currentNode.getNextNode();
+        }
+        output += "<tail>";
+        System.out.println(output);
+        return output;
+    }
 
     public static void main(String[] args) {
 
