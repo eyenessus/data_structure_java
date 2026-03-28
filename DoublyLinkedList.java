@@ -107,7 +107,7 @@ public class DoublyLinkedList {
         Node currentNode = this.head;
         String output = "<head> ";
         while (currentNode != null) {
-            output += currentNode.data + " ";
+            output += currentNode.data + " ->  ";
             currentNode = currentNode.getNextNode();
         }
         output += "<tail>";
@@ -116,6 +116,15 @@ public class DoublyLinkedList {
     }
 
     public static void main(String[] args) {
-
+        DoublyLinkedList subway = new DoublyLinkedList();
+        subway.addToHead("Faria Lima");
+        subway.addToHead("Pinheiros");
+        subway.addToTail("Fradique Coutinho");
+        subway.addToTail("Oscar Freire");
+        subway.addToHead("Hebraica-Rebouças");
+        subway.addToHead("Butantã");
+        subway.addToHead("São Paulo - Morumbi");
+        
+        subway.printList();
     }
 }
