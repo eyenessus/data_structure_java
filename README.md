@@ -21,3 +21,7 @@ Filas são estrutura de dados FIFO (first-in first-out), onde o primeiro element
 
 ### Stacks - Pilhas
 A estrutura de dados pilhas e usado para armazenar elementos de forma ordenada, seguindo o princípio LIFO - (“Last In, First Out”) o último elemento que entra é o primeiro a sair, esse comportamento é útil em várias situações, para gerenciar ordem sequêncial.
+
+## Autor
+- [@eyenessus](https://www.github.com/eyenessus)
+
