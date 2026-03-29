@@ -90,8 +90,8 @@ public class DoublyLinkedList {
 
         Node previousNode = removeData.getPreviousNode();
         Node nextNode = removeData.getNextNode();
-        
-        if (nextNode == null){
+
+        if (nextNode == null) {
             this.removeTail();
         } else if (previousNode == null) {
             this.removeHead();
@@ -101,6 +101,92 @@ public class DoublyLinkedList {
         }
 
         return removeData;
+    }
+
+    // Troca de ponteiros de Nodes
+    public void swapNodes(String data1, String data2) {
+        Node node1 = this.head;
+        Node node2 = this.head;
+
+        if (data1.equals(data2)) {
+            return;
+        }
+
+        while (node1 != null) {
+            if (node1.data.equals(data1)) {
+                break;
+            }
+            node1 = node1.getNextNode();
+        }
+
+        while (node2 != null) {
+            if (node2.data.equals(data2)) {
+                break;
+            }
+            node2 = node2.getNextNode();
+        }
+
+        if (node2 == null || node1 == null) {
+            System.out.println("Valide os nomes por favor!");
+            return;
+        }
+
+        // <>Node1
+        Node prevNode1 = node1.getPreviousNode();
+        Node nextNode1 = node1.getNextNode();
+
+        // <>Node2
+        Node prevNode2 = node2.getPreviousNode();
+        Node nextNode2 = node2.getNextNode();
+
+        // Validação de bordas Head e Tail
+        if (prevNode1 == null) {
+            this.head = node2;
+        } else {
+            prevNode1.setNextNode(node2);
+        }
+
+        if (prevNode2 == null) {
+            this.head = node1;
+        } else {
+            prevNode2.setNextNode(node1);
+        }
+
+        if (nextNode1 == null) {
+            this.tail = node2;
+        } else {
+            nextNode1.setPreviousNode(node2);
+        }
+
+        if (nextNode2 == null) {
+            this.tail = node1;
+        } else {
+            nextNode2.setPreviousNode(node1);
+        }
+
+        if (nextNode1 == node2) {
+            node2.setPreviousNode(prevNode1);
+            node2.setNextNode(node1);
+
+            node1.setPreviousNode(node2);
+            node1.setNextNode(nextNode2);
+            return;
+        }
+
+        if(nextNode2 == node1){
+           node1.setPreviousNode(prevNode2);
+           node1.setNextNode(node2);
+
+           node2.setPreviousNode(node1);
+           node2.setNextNode(nextNode1);
+           return;
+        }
+
+        node1.setNextNode(nextNode2);
+        node2.setNextNode(nextNode1);
+
+        node1.setPreviousNode(prevNode2);
+        node2.setPreviousNode(prevNode1);
     }
 
     public String printList() {
@@ -124,7 +210,9 @@ public class DoublyLinkedList {
         subway.addToHead("Hebraica-Rebouças");
         subway.addToHead("Butantã");
         subway.addToHead("São Paulo - Morumbi");
-        
+
+        subway.printList();
+        subway.swapNodes("São Paulo - Morumbi", "Pinheiros");
         subway.printList();
     }
 }
