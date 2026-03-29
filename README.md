@@ -22,6 +22,13 @@ Filas são estrutura de dados FIFO (first-in first-out), onde o primeiro element
 ### Stacks - Pilhas
 A estrutura de dados pilhas e usado para armazenar elementos de forma ordenada, seguindo o princípio LIFO - (“Last In, First Out”) o último elemento que entra é o primeiro a sair, esse comportamento é útil em várias situações, para gerenciar ordem sequêncial.
 
+
+
+## Lições aprendidas
+LIsta Ligadas: 
+Ao implementar uma lista duplamente ligada do zero, consegui compreender melhor padrões importantes como invariantes e validações essenciais, além de ampliar minha percepção sobre os casos de uso dessa estrutura de dados. Passei a me atentar à importância de verificar se um nó não é o próprio head ou tail antes de realizar determinadas operações, e entendi que, ao remover um nó do meio, é fundamental ajustar corretamente os ponteiros tanto dos nós vizinhos quanto do próprio nó removido. Durante operações de troca de nós, especialmente no meio da lista, ficou mais claro como identificar o fim da lista e, assim, atualizar corretamente o tail ou o head, além de perceber a diferença entre trocar nós que estão distantes entre si e lidar com nós adjacentes, algo que foi particularmente complexo para mim e exigiu mais cuidado na manipulação dos ponteiros. Também desenvolvi uma visão mais cuidadosa sobre a manipulação de ponteiros, garantindo que nenhuma referência seja perdida durante os ajustes. Além disso, passei a considerar cenários específicos, como quando um nó vem após o outro (node2 depois de node1), e a importância de percorrer corretamente a lista para manter sua integridade. No geral, esse processo fortaleceu meu entendimento prático sobre estruturas encadeadas e manipulação segura de ponteiros.
+
+
 ## Autor
 - [@eyenessus](https://www.github.com/eyenessus)
 
