@@ -11,7 +11,7 @@ public class HashMap {
     private int hash(String key) {
         int hashCode = 0;
 
-        for (int i = 0; i < hashMap.length; i++) {
+        for (int i = 0; i < key.length(); i++) {
             hashCode = hashCode + Character.codePointAt(key, i); // soma de todos os caracters da key
         }
 
@@ -65,13 +65,13 @@ public class HashMap {
 
     public static void main(String[] args) {
         HashMap hashMap = new HashMap(10);
-        // hashMap.assign("1", "Emerson S.");
+        hashMap.assign("1", "Emerson S.");
         hashMap.assign("mandarin duck", "Central Park Pond");
         hashMap.assign("monk parakeet", "Brooklyn College");
         hashMap.assign("horned owl", "Pelham Bay Park");
         System.out.println(hashMap.retrieve("mandarin duck"));
         System.out.println(hashMap.retrieve("monk parakeet"));
-        System.out.println(hashMap.retrieve("emerson"));
+        System.out.println(hashMap.retrieve("1"));
     }
 
 }
