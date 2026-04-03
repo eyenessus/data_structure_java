@@ -2,14 +2,25 @@ public class Node {
     public String data;
     private Node next;
     private Node previus;
-
+    public String key;
+    
     public Node(String data){
         this.data = data;
         this.next = null;
     }
 
+    public Node(String key, String value){
+        this.key= key;
+        this(value);
+    }
+
     public void setNextNode(Node node){
         this.next = node;
+    }
+
+    public void setKeyValue(String key, String value){
+        this.key = key;
+        this.data = value;
     }
     
     public Node getNextNode(){

@@ -16,8 +16,29 @@ public class LinkedList {
         }
     }
 
+    public void addToHead(String key, String value) {
+        Node newHead = new Node(key, value);
+        Node currentHead = this.head;
+
+        this.head = newHead;
+
+        if (currentHead != null) {
+            this.head.setNextNode(new Node(key, value));
+        }
+    }
+
     public void addToTail(String data) {
         Node tailNode = new Node(data);
+        Node currentNode = this.head;
+
+        while (currentNode.getNextNode() != null) {
+            currentNode = currentNode.getNextNode();
+        }
+        currentNode.setNextNode(tailNode);
+    }
+    
+    public void addToTail(String key, String value) {
+        Node tailNode = new Node(key,value);
         Node currentNode = this.head;
 
         while (currentNode.getNextNode() != null) {
@@ -55,7 +76,7 @@ public class LinkedList {
         seasons.addToTail("fall");
         seasons.addToTail("winter");
         seasons.printList();
-        
+
         seasons.removeHead();
         seasons.printList();
     }
